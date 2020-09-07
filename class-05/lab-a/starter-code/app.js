@@ -105,7 +105,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+	var a = multArr[0];
+	var numString = 'The numbers ' + multArr[0] + ',';
+	for (var i = 1; i < multArr.length-1; i++){
+		a = multiply(multArr[i], a)[0];
+		numString += multArr[i] + ',';
+	}
+	a = multiply(multArr[multArr.length-1], a)[0];
+	numString += multArr[multArr.length-1] + ' have a product of ' + a + '.';
+	return([a, numString]);
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
